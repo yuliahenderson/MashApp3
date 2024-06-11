@@ -788,8 +788,8 @@ section .img-8, section .img-9, section .img-10, section
     position: relative;
     top: 2%;
     left: 6%;
-    width: 270px;
-    height: 590px;
+    width: 264px;
+    height: 584px;
     overflow: hidden;
     z-index: 0;
     border-radius: 25px;
