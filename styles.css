@@ -786,9 +786,9 @@ section .img-8, section .img-9, section .img-10, section
 /* Styles for the container holding the slider */
 .container-phone {
     position: relative;
-    top: 4%;
-    left: 7%;
-    width: 274px;
+    top: 2%;
+    left: 6%;
+    width: 270px;
     height: 590px;
     overflow: hidden;
     z-index: 0;
