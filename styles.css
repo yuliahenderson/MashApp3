@@ -844,10 +844,10 @@ section .img-8, section .img-9, section .img-10, section
 /* Styles for the container holding the slider */
 .container-phone {
     position: relative;
-    top: 2%;
-    left: 10%;
-    width: 254px;
-    height: 540px;
+    top: 4.5%;
+    left: 6%;
+    width: 276px;
+    height: 590px;
     overflow: hidden;
     z-index: 0;
     border-radius: 25px;
