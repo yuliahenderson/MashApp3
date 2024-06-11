@@ -787,9 +787,9 @@ section .img-8, section .img-9, section .img-10, section
 .container-phone {
     position: relative;
     top: 2%;
-    left: 6%;
+    left: 8%;
     width: 264px;
-    height: 584px;
+    height: 560px;
     overflow: hidden;
     z-index: 0;
     border-radius: 25px;
