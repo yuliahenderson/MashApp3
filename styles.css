@@ -557,6 +557,39 @@ p3.mobile {
   hyphens: auto;
 }
 
+h1.faq {
+  font-size: 12px;
+  font-family: Helvetica;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+  word-spacing: 0.1em;
+  letter-spacing: -0.3px;
+  hyphens: auto;
+
+}
+
+p4 {
+  font-size: 24px;
+  font-family: Helvetica;
+  font-weight: 700;
+  line-height: 12px;
+  text-align: right;
+  word-spacing: 0.1em;
+  letter-spacing: -0.3px;
+  hyphens: auto;
+}
+
+p5 {
+  font-size: 12px;
+  font-family: Helvetica;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  word-spacing: 0.1em;
+  letter-spacing: -0.3px;
+  hyphens: auto;
+}
 
 .container {
   width: 100%;
@@ -1333,11 +1366,11 @@ section .img1-page7, section .img2-page7, section .img3-page7, section .img4-pag
 .page11-header {
     position: relative;
     width: 100%;
+    margin-bottom: 5%;
 }
-.faq_image {
-    display: block;
-    width: 100%;
-    height: auto;
+
+.page11-main {
+
 }
 
 .page11-title {
@@ -1348,5 +1381,61 @@ section .img1-page7, section .img2-page7, section .img3-page7, section .img4-pag
     width: 60%;
     top: 20%;
     padding: 10px;
+}
+
+.question1 {
+  display: flex;
+  margin-bottom: 5%;
+}
+.q-1 {
+  float: left;
+  width: 20%;
+  padding: 3% 5% 5% 5%;
+}
+.question {
+  float: right;
+  width: 80%;
+  text-align: left;
+  padding-right: 5%;
+}
+.question2 {
+  display: flex;
+  background-color: #F4F4F4;
+  margin-bottom: 5%;
+  padding: 5% 5% 5% 0;
+}
+.q-2 {
+  float: left;
+  width: 20%;
+  padding: 3% 5% 5% 5%;
+}
+.question3 {
+  display: flex;
+  margin-bottom: 5%;
+}
+.q-3 {
+  float: left;
+  width: 20%;
+  padding: 3% 5% 5% 5%;
+}
+.question4 {
+  display: flex;
+  margin-bottom: 5%;
+  background-color: #F4F4F4;
+  padding: 5% 5% 5% 0;
+}
+.q-4 {
+  float: left;
+  width: 20%;
+  padding: 3% 5% 5% 5%;
+}
+.question5 {
+  display: flex;
+  margin-bottom: 5%;
+}
+.q-5 {
+  float: left;
+  width: 20%;
+  padding: 3% 5% 5% 5%;
 }
 }
