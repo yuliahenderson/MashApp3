@@ -380,7 +380,7 @@ function initializeSlider() {
   showSlide(currentIndex);
 
   // Start the loop
-  setInterval(nextSlide, 10000); // Change image every 5 seconds
+  setInterval(nextSlide, 9000); // Change image every 9 seconds
 }
 
 // Listen for the scroll event
