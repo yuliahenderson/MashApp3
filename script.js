@@ -354,6 +354,46 @@ document.addEventListener('DOMContentLoaded', mobileSliderFunction);
             window.addEventListener('scroll', handleScroll);
         }
 
+// Listen for the scroll event
+window.addEventListener('scroll', () => {
+  // Get the distance between the top of the page and the top of the "page4" section
+  const page4Top = document.querySelector('.slider-page4').offsetTop;
+
+  // Check if the user has scrolled to the "page4" section
+  if (window.scrollY >= page4Top) {
+    // Execute your code here when scrolled to "page4"
+    const slides = document.querySelectorAll('.slide4');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide4, i) => {
+        if (i === index) {
+          slide4.classList.add('active');
+        } else {
+          slide4.classList.remove('active');
+        }
+      });
+      console.log('Show slide', index); // Log message to indicate which slide is being shown
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+      console.log('Next slide', currentIndex); // Log message to indicate the next slide index
+    }
+
+    // Initial setup
+    showSlide(currentIndex);
+
+    // Start the loop
+    setInterval(() => {
+      nextSlide();
+      console.log('Interval triggered'); // Log message to indicate interval trigger
+    }, 5000); // Change image every 5 seconds
+  }
+});
+
+
         // Fixed header color change to grey on page 9
         function mobileFixedHeaderGreyFunction() {
             var header = document.getElementById('fixedHeader');

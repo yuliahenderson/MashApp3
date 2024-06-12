@@ -1007,6 +1007,29 @@ section .img-8, section .img-9, section .img-10, section
 
 }
 
+.slider-page4 {
+  width: 100%; /* Set your desired width */
+  height: 443px; /* Set your desired height */
+  position: relative;
+  overflow: hidden;
+}
+
+.slide4 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: translateX(100%); /* Start offscreen to the right */
+  opacity: 0;
+  transition: transform 1s ease, opacity 1s ease; /* Smooth transition */
+}
+
+.slide4.active {
+  transform: translateX(0); /* Slide into view from the left */
+  opacity: 1;
+}
+
 .page4-text {
  margin-top: 10%;
 }
