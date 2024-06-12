@@ -418,7 +418,7 @@ function initializeSlider() {
   showSlide(currentIndex);
 
   // Start the loop
-  setInterval(nextSlide, 9000); // Change image every 5 seconds
+  setInterval(nextSlide, 9000); // Change image every 9 seconds
 }
 
 // Check if the user is on "page4"
@@ -426,22 +426,6 @@ if (window.location.hash === '#page4') {
   // Execute initializeSlider function when user is on "page4"
   initializeSlider();
 }
-
-
-// Listen for the scroll event
-window.addEventListener('scroll', () => {
-  // Get the distance between the top of the page and the top of the "page4" section
-  const page4Top = document.querySelector('.slider-page4').offsetTop;
-
-  // Check if the user has scrolled to the "page4" section
-  if (window.scrollY >= page4Top - window.innerHeight / 2) {
-    // Execute initializeSlider function when scrolled to "page4"
-    initializeSlider();
-
-    // Remove the scroll event listener to prevent multiple executions
-    window.removeEventListener('scroll', initializeSlider);
-  }
-});
 
 
         // Fixed header color change to grey on page 9
