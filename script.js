@@ -274,11 +274,43 @@ document.addEventListener('DOMContentLoaded', mobileSliderFunction);
                 }
             }
 
+            function isScrolledTo95PercentOfPage10() {
+                var page10 = document.getElementById('page10');
+                if (page10) {
+                    var page10Height = page10.offsetHeight;
+                    var page10Top = page10.offsetTop;
+                    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    var scrollThreshold = page10Top + (page10Height * 0.95); // 95% of page10 height
+
+                    return scrollTop >= scrollThreshold;
+                } else {
+                    console.error('Page 10 element not found.');
+                    return false;
+                }
+            }
+
+            function isScrolledTo95PercentOfPage11() {
+                var page11 = document.getElementById('page11');
+                if (page11) {
+                    var page11Top = page11.offsetTop;
+                    var page11Height = page11.offsetHeight;
+                    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    var scrollThreshold = page11Top + (page11Height * 0.95); // 95% of page11 height
+
+                    return scrollTop >= scrollThreshold;
+                } else {
+                    console.error('Page 11 element not found.');
+                    return false;
+                }
+            }
+
             function handleScroll() {
                 var scrolledTo95PercentOfPage2 = isScrolledTo95PercentOfPage2();
                 var scrolledTo25PercentOfPage3 = isScrolledTo25PercentOfPage3();
                 var scrolledTo95PercentOfPage8 = isScrolledTo95PercentOfPage8();
                 var scrolledTo95PercentOfPage9 = isScrolledTo95PercentOfPage9();
+                var scrolledTo95PercentOfPage10 = isScrolledTo95PercentOfPage10();
+                var scrolledTo95PercentOfPage11 = isScrolledTo95PercentOfPage11();
 
                 if (scrolledTo95PercentOfPage2 && !scrolledTo25PercentOfPage3) {
                     console.log('Scrolled to 95% of Page 2 and not 25% of Page 3 - changing meta color to green');
@@ -288,7 +320,13 @@ document.addEventListener('DOMContentLoaded', mobileSliderFunction);
                     console.log('Scrolled to 95% of Page 8 and not 95% of Page 9 - changing meta color to grey');
                     // Change meta tag color to grey when scrolled to 95% of page8 and not scrolled to 95% of page9
                     themeColorMeta.setAttribute('content', '#f4f4f4');
-                } else {
+                }
+                  else if (scrolledTo95PercentOfPage10 && !scrolledTo95PercentOfPage11) {
+                    console.log('Scrolled to 95% of Page 10 and not 95% of Page 11 - changing meta color to blue');
+                    // Change meta tag color to blue when scrolled to 95% of page10 and not scrolled to 95% of page11
+                    themeColorMeta.setAttribute('content', '#00C9FF');
+                }
+                else {
                     console.log('Resetting meta color to white');
                     // Reset meta tag color to white if none of the above conditions are met
                     themeColorMeta.setAttribute('content', '#ffffff');
