@@ -458,13 +458,66 @@ window.addEventListener('scroll', () => {
             window.addEventListener('scroll', handleScroll);
         }
 
+// Fixed header color change to blue on page 11
+        function mobileFixedHeaderBlueFunction() {
+            var header = document.getElementById('fixedHeader');
+
+            function isScrolledTo95PercentOfPage10() {
+                var page10 = document.getElementById('page10');
+                if (page10) {
+                    var page10Height = page10.offsetHeight;
+                    var page10Top = page10.offsetTop;
+                    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    var scrollThreshold = page10Top + (page10Height * 0.95); // 95% of page10 height
+
+                    return scrollTop >= scrollThreshold;
+                } else {
+                    console.error('Page 10 element not found.');
+                    return false;
+                }
+            }
+
+            function isScrolledTo95PercentOfPage11() {
+                var page11 = document.getElementById('page11');
+                if (page11) {
+                    var page11Top = page11.offsetTop;
+                    var page11Height = page11.offsetHeight;
+                    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    var scrollThreshold = page11Top + (page11Height * 0.95); // 95% of page11 height
+
+                    return scrollTop >= scrollThreshold;
+                } else {
+                    console.error('Page 11 element not found.');
+                    return false;
+                }
+            }
+
+            function handleScroll() {
+                var scrolledTo95PercentOfPage10 = isScrolledTo95PercentOfPage10();
+                var scrolledTo95PercentOfPage11 = isScrolledTo95PercentOfPage11();
+
+                if (scrolledTo95PercentOfPage10 && !scrolledTo95PercentOfPage11) {
+                    console.log('Scrolled to 95% of Page 10 and not 95% of Page 11 - changing header color to blue');
+                    // Change header color to grey if scrolled to 95% of page8 and not scrolled to 95% of page9
+                    header.style.backgroundColor = '#00C9FF';
+                }
+            }
+
+            // Initial call to handleScroll() to set initial state based on page load position
+            handleScroll();
+
+            // Attach scroll event listener to the window
+            window.addEventListener('scroll', handleScroll);
+        }
         // Function to initialize all mobile-specific functionality
         function initializeMobileFunctions() {
             mobileSliderFunction();
             mobileFixedHeaderFunction();
             mobileThemeColorMetaFunction();
             mobileFixedHeaderGreenFunction();
+            initializeSlider()
             mobileFixedHeaderGreyFunction();
+            mobileFixedHeaderBlueFunction()
             // Call other mobile-specific functions here
         }
 
