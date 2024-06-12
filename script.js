@@ -380,8 +380,15 @@ function initializeSlider() {
   showSlide(currentIndex);
 
   // Start the loop
-  setInterval(nextSlide, 9000); // Change image every 9 seconds
+  setInterval(nextSlide, 9000); // Change image every 5 seconds
 }
+
+// Check if the user is on "page4"
+if (window.location.hash === '#page4') {
+  // Execute initializeSlider function when user is on "page4"
+  initializeSlider();
+}
+
 
 // Listen for the scroll event
 window.addEventListener('scroll', () => {
