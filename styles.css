@@ -489,7 +489,7 @@ section .img-8, section .img-9, section .img-10, section
 
   .mobile-only {
     display: block;
-    height: 100vh;
+/*    height: 100vh;*/
   }
 
 #fixedHeader {
