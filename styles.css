@@ -1462,6 +1462,34 @@ section .img1-page7, section .img2-page7, section .img3-page7, section .img4-pag
   padding: 3% 5% 5% 5%;
 }
 
+.collapsible {
+  cursor: pointer;
+  position: relative;
+}
+
+.toggle-icon {
+  font-weight: bold;
+  cursor: pointer;
+  color: #000000;
+  margin-left: 5px; /* Add some spacing between the sentence and the toggle icon */
+}
+
+.hidden-content {
+  display: none;
+}
+
+.hidden-content.active {
+  display: inline;
+}
+
+.toggle-icon::after {
+  content: '+'; /* Default is "+" */
+}
+
+.toggle-icon.active::after {
+  content: '−'; /* Change to "−" when active */
+}
+
 footer {
   margin: 10% 20% 10% 20%;
 

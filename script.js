@@ -418,7 +418,7 @@ function initializeSlider() {
   showSlide(currentIndex);
 
   // Start the loop
-  setInterval(nextSlide, 9000); // Change image every 9 seconds
+  setInterval(nextSlide, 5000); // Change image every 5 seconds
 }
 
 // Check if the user is on "page4"
@@ -499,13 +499,13 @@ if (window.location.hash === '#page4') {
                 }
             }
 
-            function isScrolledTo95PercentOfPage11() {
+            function isScrolledTo25PercentOfPage11() {
                 var page11 = document.getElementById('page11');
                 if (page11) {
                     var page11Top = page11.offsetTop;
                     var page11Height = page11.offsetHeight;
                     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    var scrollThreshold = page11Top + (page11Height * 0.95); // 95% of page11 height
+                    var scrollThreshold = page11Top + (page11Height * 0.25); // 25% of page11 height
 
                     return scrollTop >= scrollThreshold;
                 } else {
@@ -516,10 +516,10 @@ if (window.location.hash === '#page4') {
 
             function handleScroll() {
                 var scrolledTo95PercentOfPage10 = isScrolledTo95PercentOfPage10();
-                var scrolledTo95PercentOfPage11 = isScrolledTo95PercentOfPage11();
+                var scrolledTo25PercentOfPage11 = isScrolledTo25PercentOfPage11();
 
-                if (scrolledTo95PercentOfPage10 && !scrolledTo95PercentOfPage11) {
-                    console.log('Scrolled to 95% of Page 10 and not 95% of Page 11 - changing header color to blue');
+                if (scrolledTo95PercentOfPage10 && !scrolledTo25PercentOfPage11) {
+                    console.log('Scrolled to 95% of Page 10 and not 25% of Page 11 - changing header color to blue');
                     // Change header color to grey if scrolled to 95% of page8 and not scrolled to 95% of page9
                     header.style.backgroundColor = '#00C9FF';
                 }
@@ -531,6 +531,7 @@ if (window.location.hash === '#page4') {
             // Attach scroll event listener to the window
             window.addEventListener('scroll', handleScroll);
         }
+
         // Function to initialize all mobile-specific functionality
         function initializeMobileFunctions() {
             mobileSliderFunction();
@@ -548,6 +549,20 @@ if (window.location.hash === '#page4') {
     }
 });
 
+
+        document.addEventListener('DOMContentLoaded', () => {
+        const collapsibles = document.querySelectorAll('.collapsible');
+
+    collapsibles.forEach(collapsible => {
+    const toggleIcon = collapsible.querySelector('.toggle-icon');
+    const hiddenContent = collapsible.querySelector('.hidden-content');
+
+    toggleIcon.addEventListener('click', () => {
+      hiddenContent.classList.toggle('active');
+      toggleIcon.classList.toggle('active');
+    });
+  });
+});
 
 
 
